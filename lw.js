@@ -15,11 +15,11 @@ function findLongestWordWithMostVowels(sentence) {
     let maxLength = 0;
     let maxVowels = 0;
   
-    const words = sentence.split(' ');
+    const words = sentence.split(/\s+/); // Split by one or more spaces
   
     for (const word of words) {
-      // Remove non-alphabet characters
-      const cleanWord = word.replace(/[^a-zA-Z]/g, '');
+      // Remove non-alphabet characters and convert to lowercase
+      const cleanWord = word.replace(/[^a-zA-Z]/g, '').toLowerCase();
   
       // Calculate word length and vowel count
       const wordLength = cleanWord.length;
